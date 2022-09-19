@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    app:
+      hikari:
+        jdbcUrl: jdbc:postgresql://localhost:5432/release_manager
+        username: postgres
+        password: postgres
+    # should be configured another user for Liquibase, more powerful
+    liquibase:
+      hikari:
+        jdbcUrl: jdbc:postgresql://localhost:5432/release_manager
+        username: postgres
+        password: postgres
+
+  liquibase:
+    change-log: classpath:/db/changelog-master.xml
+    enabled: true
+

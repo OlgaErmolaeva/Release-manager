@@ -1,0 +1,30 @@
+### Create 1st service
+POST http://localhost:8080/manager/v1/deploy
+Content-Type: application/json
+
+{
+  "serviceName": "First_service",
+  "serviceVersionNumber": 3
+}
+
+### Create 2nd service
+POST http://localhost:8080/manager/v1/deploy
+Content-Type: application/json
+
+{
+  "serviceName": "Third_service",
+  "serviceVersionNumber": 1
+}
+
+### Update 2nd service
+POST http://localhost:8080/manager/v1/deploy
+Content-Type: application/json
+
+{
+  "serviceName": "Second_service",
+  "serviceVersionNumber": 1
+}
+
+###
+GET http://localhost:8080/manager/v1/services?systemVersion=10
+Content-Type: application/json
